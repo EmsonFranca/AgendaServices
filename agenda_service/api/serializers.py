@@ -4,14 +4,14 @@ from agenda_service.models import Servico, ExecucaoServico, Feedback
 class ServicoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Servico
-        fields = '__all__'
+        fields = ['nome','estimativa_tempo']
 
 class ExecucaoServicoSerializer(serializers.ModelSerializer):
     class Meta:
         model = ExecucaoServico
-        fields = '__all__'
+        fields = ['servico','tempo_real','data_execucao']
 
 class FeedbackSerializer(serializers.ModelSerializer):
     class Meta:
         model = Feedback
-        fields = '__all__'
+        fields = ['execucao_servico','comentario','avaliacao']
